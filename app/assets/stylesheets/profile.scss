@@ -1,0 +1,81 @@
+.tutorial-container {
+    background: #252a34;
+    border: 3px solid #e50915;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: center;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    .close-button {
+        align-self: center;
+        background-color: #e50915;
+        border-radius: 50px;
+        border: 1px solid #e50915;
+        color: #f9f7f7;
+        cursor: pointer;
+        height: 30px;        
+        margin-top: 10px;
+        width: 100px;
+    }
+}
+
+.nav-bar {
+    align-items: start;
+    border-bottom: 3px solid #e50915;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1.5;
+    margin-top: 25px;
+    padding: 0 0 10px 25px;
+    .site-title {
+        color: #e50915;
+        font-size: 25px;
+    }
+    .movies-link,
+    .review-link,
+    .display-tutorial {
+        color: #0271e3;
+        text-decoration: none;
+    }
+
+    .display-tutorial {
+        cursor: pointer;
+    }
+}
+
+.profile-welcome {
+    font-size: 15px;
+    margin: 25px 0 15px 25px;
+}
+
+.profile-description {
+    margin-left: 25px;
+    line-height: 1.5;   
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 25px 0;
+    .movie {
+        border: 3px solid #e50915;
+        border-radius: 6px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        width: 130px;
+        .movie-title,
+        .movie-img {
+            margin-bottom: 5px;
+        }
+        .movie-img {
+            width: 130px;
+        }
+    }
+}

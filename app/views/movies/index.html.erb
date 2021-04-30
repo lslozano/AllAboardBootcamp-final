@@ -1,0 +1,21 @@
+<div class="nav-bar">
+    <h1 class="site-title">MovieFlix</h1>
+    <%= link_to "Back to Profile", "/profile", class: "profile-link" %>
+</div>
+
+<h3 class="movies-main-title">Movies reviewed by Flixers:</h3>
+
+<div class="movies-container">
+    <% @movies.each { | movie | %>
+        <% if movie.is_private.downcase == "no" %>
+            <div class="movie" data-movie-id=<%= movie.id %>>
+                <% user = User.find_by(id: movie.user_id)%>
+                <h4 class="movie-title">Review by: <%= user.name %></h4>
+                <h4 class="movie-title">Movie: <%= movie.name %></h4>
+                <%= image_tag(movie.image_url, class: "movie-img", alt: "movie image") %>
+                <p class="movie-review"><%= movie.review %></p>
+            </div>
+        <% end%>
+    <% } %>
+</div>
+<%= javascript_pack_tag 'movies' %>

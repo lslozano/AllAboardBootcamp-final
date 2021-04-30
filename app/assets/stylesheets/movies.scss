@@ -1,0 +1,124 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.nav-bar {
+    align-items: start;
+    border-bottom: 3px solid #e50915;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1.5;
+    margin-top: 25px;
+    padding: 0 0 10px 25px;
+    .site-title {
+        color: #e50915;
+        font-size: 25px;
+    }
+    .link,
+    .profile-link {
+        color: #0271e3;
+        text-decoration: none;
+    }
+}
+
+.movies-main-title {
+    margin: 25px 0 0 25px;
+}
+
+.review-form-instructions {
+    margin: 25px 0  0 25px;
+    padding-right: 25px;
+    text-align: justify;
+}
+
+.review-container {
+    border: 3px solid red;
+    border-radius: 6px;
+    margin: 25px auto 0;
+    width: 300px;
+    form {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 380px;
+        justify-content: space-evenly;
+        padding: 25px;
+        label {
+            align-self: start;
+            color: #f9f7f7;
+            margin: 10px 0;
+        }
+        input {
+            height: 40px;
+            border: 3px solid #e50915;;
+            border-radius: 6px;
+            padding-left: 10px; 
+            width: 95%;
+        }
+        .create-review {
+            background-color: #e50915;
+            border-radius: 50px;
+            border: 1px solid #e50915;
+            color: #f9f7f7;
+            height: 30px;
+            margin-top: 25px;
+            padding: 0;
+            width: 150px;
+        }
+    }
+}
+
+// Specific styles for the movie review page
+.movie-reviewed {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    .movie-img {
+        width: 130px;
+    }
+    .movie-review-info {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5;
+        margin-left: 25px;
+    }
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    .current-user {
+        text-align: right;
+        margin: 20px 10px 20px 0;
+    }
+    .user {
+        text-align: right;
+        margin: 20px 0 20px 10px;
+    }
+}
+
+.create-comment-container {
+    bottom: 0;
+    margin-bottom: 10px;
+    position: absolute;
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        .input-comment {
+            height: 35px;
+            margin: 15px 0 0 5px;
+            width: 95%;
+        }
+        .create-comment-button {
+            align-self: center;
+            background-color: #e50915;
+            border-radius: 50px;
+            border: 1px solid #e50915;
+            color: #f9f7f7;
+            height: 30px;
+            margin-top: 15px;
+            width: 130px;
+        }
+    }
+}

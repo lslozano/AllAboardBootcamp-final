@@ -1,0 +1,42 @@
+<div class="nav-bar">
+    <h1 class="site-title">MovieFlix</h1>
+    <%= link_to "Back to Profile", "/profile", class: "profile-link" %>
+</div>
+
+<div class="movie-reviewed">
+    <div>
+        <%= image_tag(@movie.image_url, class: "movie-img", alt: "movie image") %>
+    </div>
+    <div class="movie-review-info">
+        <h3><%= @movie.name %></h1>
+        <br>
+        <% user = User.find_by(id: @movie.user_id)%>
+        <p>Reviewed by: <%= user.name %></p>
+        <br>
+        <p>Review:</p>
+        <p><%= @movie.review %>
+    </div>
+</div>
+
+<div class="comments-container">
+    <% @comments.each { | comment | %>
+        <% if comment.movie_id == @movie.id %>
+            <% user = User.find_by(id: comment.user_id) %>
+            <% if user.id == current_user.id %>
+                <p class="current-user"> <%= comment.body %> </p>
+            <% else %>
+                <p class="user"> <%= user.name %>: <%= comment.body %> </p>
+            <% end %>
+        <% end%>
+    <% } %>
+</div>
+
+<div class="create-comment-container">
+    <%= form_with url: "/create-comment", method: :post do |f| %>
+        <label>Leave a comment:</label>
+        <%= f.text_field :body, placeholder: "Write your comment.", class: "input-comment" %>
+        <%= f.hidden_field :user_id, value: user.id %>
+        <%= f.hidden_field :movie_id, value: @movie.id %>
+        <%= submit_tag("Create comment",:class=>"create-comment-button", :name=>"submit") %>
+    <% end %>
+</div>

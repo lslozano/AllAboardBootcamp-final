@@ -1,0 +1,116 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// background-image: url('https://asianews.press/wp-content/uploads/2020/09/BF0D4BEC-F842-4029-B92E-6B993FA11521.jpeg');
+// background-size: cover;
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("https://asianews.press/wp-content/uploads/2020/09/BF0D4BEC-F842-4029-B92E-6B993FA11521.jpeg");
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+
+    .welcome-container {
+        align-self: center;
+        background-color: #222831;
+        border-radius: 6px;
+        border: 3px solid #e50915;
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        width: 50%;
+
+        .site-title {
+            color: #e50915;
+            font-size: 25px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .signup-login-container {
+            padding-top: 30px;
+            .site-description {
+                color: #f9f7f7;
+                font-size: 15px;
+                padding: 0 10px;
+                text-align: center;
+            }
+            .login-signup-buttons {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                justify-content: space-evenly;
+                margin: 15px auto 0;
+                width: 70%;
+                .signup-button,
+                .login-button {
+                    background-color: #e50915;
+                    border-radius: 50px;
+                    border: 1px solid #e50915;
+                    color: #f9f7f7;
+                    height: 30px;
+                }
+            }
+            .new_user {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                justify-content: space-evenly;
+                input {
+                    height: 40px;
+                    border: 3px solid #e50915;;
+                    border-radius: 6px;
+                    width: 130px;
+                    padding-left: 10px;
+                }
+                .create-user {
+                    background-color: #e50915;
+                    border-radius: 50px;
+                    border: 1px solid #e50915;
+                    color: #f9f7f7;
+                    height: 30px;
+                    padding: 0;
+                    width: 92px;
+                }
+            }
+            form {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                justify-content: space-evenly;
+                padding: 0 50px;
+                label {
+                    align-self: start;
+                    color: #f9f7f7;
+                }
+                input {
+                    height: 40px;
+                    border: 3px solid #e50915;;
+                    border-radius: 6px;
+                    padding-left: 10px; 
+                    width: 130px;
+                }
+                .login-button {
+                    background-color: #e50915;
+                    border-radius: 50px;
+                    border: 1px solid #e50915;
+                    color: #f9f7f7;
+                    height: 30px;
+                    margin-top: 5px;
+                    padding: 0;
+                    width: 92px;
+                }
+            }
+            .back-link {
+                color: #0271e3;
+                margin-left: 25px;
+                text-decoration: none;
+            }
+        }
+    }
+}

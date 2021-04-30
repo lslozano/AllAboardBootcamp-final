@@ -1,0 +1,23 @@
+<div class="nav-bar">
+    <h1 class="site-title">MovieFlix</h1>
+    <%= link_to "Back to Profile", "/profile", class: "profile-link" %>
+</div>
+
+<p class="review-form-instructions">
+    <%= current_user.name %>, fill the form below to review a movie. 
+    Write "Yes" in the corresponding field if you want the review to be publicly available.
+</p>
+
+<div class="review-container">
+    <%= form_for Movie.new do |f| %>
+        <label>Name of the movie:</label>
+        <%= f.text_field :name, placeholder: "Name of the movie." %>
+        <label>Copy the url of the movie image:</label>
+        <%= f.text_field :image_url, placeholder: "Url of the movie image." %>
+        <label>Want this review to be public?</label>
+        <%= f.text_field :is_private, placeholder: "Yes/No" %>
+        <label>Review:</label>
+        <%= f.text_field :review, placeholder: "Write your review!" %>
+        <%= f.submit class: "create-review" %>
+    <% end %>
+</div>

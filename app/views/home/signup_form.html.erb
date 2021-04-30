@@ -1,0 +1,7 @@
+<%= form_for User.new do |f| %>
+    <%= f.text_field :name, placeholder: "Enter your username" %>   
+    <%= f.email_field :email, placeholder: "Enter your email" %>
+    <%= f.submit class: "create-user" %>
+<% end %>
+<br>
+<%= link_to "Back", "/", class: "back-link" %>

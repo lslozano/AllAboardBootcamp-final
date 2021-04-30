@@ -1,0 +1,45 @@
+<div class="tutorial-container">
+    <h3>Hello MovieFlixers!</h3>
+    <br>
+    <p>
+        Here in your profile you can click on the "Review a movie" link to add a review of a movie you saw.
+        The movies you review will show here.
+        <br>
+        <br>
+        Only the reviews that each user has specified as public will be displayed at the movies public section,
+        which you can visit in the "See all reviewed movies!" link.
+        <br>
+        <br>
+        You can access each review by clicking on it and join the conversation on their specific chats.
+        <br>
+        Enjoy and have fun!
+    </p>
+    <button class="close-button">Got it!</button>
+</div>
+
+<div class="nav-bar">
+    <h1 class="site-title">MovieFlix</h1>
+    <%= link_to "Review a movie", "/movies/new", class: "review-link" %>
+    <%= link_to "See all reviewed movies!", "/movies", class: "movies-link" %>
+    <p class="display-tutorial">Tutorial</p>
+</div>
+
+<h3 class="profile-welcome">Welcome to your profile page <%= current_user.name %>!</h3>
+<p class="profile-description">
+    Here you will find the movies you have reviewed. <br>
+</p>
+
+<div class="movies-container">
+    <% @movies.each { | movie | %>
+        <% if movie.user_id == current_user.id %>
+            <div class="movie" data-movie-id=<%= movie.id %> data-movie-privacy=<%= movie.is_private %> >
+                <h4 class="movie-title"><%= movie.name %></h4>
+                <%= image_tag(movie.image_url, class: "movie-img", alt: "movie image") %>
+                <p class="movie-review"><%= movie.review %></p>
+                <p>Set to private: <%= movie.is_private %></p>
+            </div>
+        <% end%>
+    <% } %>
+</div>
+<%= javascript_pack_tag 'tutorial' %>
+<%= javascript_pack_tag 'profile' %>

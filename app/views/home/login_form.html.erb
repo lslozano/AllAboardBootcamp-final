@@ -1,0 +1,9 @@
+<%= form_tag '/login' do %>
+    <label>Username:</label>
+    <%= text_field_tag :name %>
+    <label>Email:</label>
+    <%= email_field_tag :email %>
+    <%= submit_tag("Login", :class=>"login-button", :name=>"submit") %>
+<% end %>
+<br>
+<%= link_to "Back", "/", class: "back-link" %>
